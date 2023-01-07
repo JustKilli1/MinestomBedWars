@@ -3,12 +3,11 @@ package net.marscraft.commands;
 import net.marscraft.Main;
 import net.marscraft.instances.BedWarsInstanceManager;
 import net.minestom.server.command.builder.Command;
-import net.minestom.server.command.builder.arguments.ArgumentType;
 import net.minestom.server.entity.Player;
 
-public class TestLeave extends Command {
+public class CmdLeaveLobby extends Command {
 
-    public TestLeave() {
+    public CmdLeaveLobby() {
         super("leave");
         setDefaultExecutor(((sender, context) -> sender.sendMessage("/lobby create. /lobby join <id>")));
 

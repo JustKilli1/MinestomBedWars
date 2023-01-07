@@ -1,8 +1,6 @@
 package net.marscraft;
 
-import net.marscraft.commands.TestCommand;
-import net.marscraft.commands.TestCommandJoin;
-import net.marscraft.commands.TestLeave;
+import net.marscraft.commands.*;
 import net.marscraft.instances.BedWarsInstanceManager;
 import net.marscraft.instances.InstanceImporter;
 import net.marscraft.server.Server;
@@ -15,8 +13,6 @@ import net.minestom.server.event.player.PlayerLoginEvent;
 import net.minestom.server.extras.MojangAuth;
 import net.minestom.server.instance.InstanceContainer;
 import net.minestom.server.instance.InstanceManager;
-import net.minestom.server.instance.block.Block;
-import net.minestom.server.item.Material;
 
 public class Main {
 
@@ -31,9 +27,11 @@ public class Main {
 
         bwInstanceManager = new BedWarsInstanceManager();
         InstanceManager instanceManager = new InstanceManager();
+        MinecraftServer.getCommandManager().register(new CmdCreateLobby());
+        MinecraftServer.getCommandManager().register(new CmdJoinLobby());
+        MinecraftServer.getCommandManager().register(new CmdLeaveLobby());
+        MinecraftServer.getCommandManager().register(new CmdGamemode());
         MinecraftServer.getCommandManager().register(new TestCommand());
-        MinecraftServer.getCommandManager().register(new TestCommandJoin());
-        MinecraftServer.getCommandManager().register(new TestLeave());
         mainInstance = InstanceImporter.importWorld("instances/world");
 
                 /*instanceManager.createInstanceContainer();

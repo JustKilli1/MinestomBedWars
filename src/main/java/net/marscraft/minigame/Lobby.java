@@ -52,6 +52,7 @@ public class Lobby extends MinigameInstance {
         if(!team.get().addMember(member)) return false;
         player.setInstance(getContainer(), new Pos(0, 100, 0));
         player.setCustomName(Component.text(team.get().getColorCode()+ team.get().getName() + " " + player.getName()));
+        player.setCustomNameVisible(true);
         player.sendMessage("Team " + team.get().getName() + " beigetreten");
         return true;
     }
