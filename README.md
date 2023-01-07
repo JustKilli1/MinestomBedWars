@@ -1,0 +1,2 @@
+# MinestomBedWars
+Minestom BedWars Extension
