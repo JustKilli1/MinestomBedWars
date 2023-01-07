@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: net.marscraft.Main
+Multi-Release: true
+
